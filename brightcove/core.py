@@ -43,7 +43,7 @@ class Connection(object):
         if params is None:
             params = {}
         params.update({'token': self.token})
-        data = urllib.urlencode(params)
+        data = urllib.urlencode(params, True)
         url = '%s?%s' % (url, data)
         return self._request(url)
 
